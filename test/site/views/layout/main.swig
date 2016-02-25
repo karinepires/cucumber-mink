@@ -20,6 +20,7 @@
                                 <a class="pure-button" href="/">Home</a>
                                 <a class="pure-button" href="/form">Forms</a>
                                 <a href="/form">Follow me to form !</a>
+                                <a class="btanchor" href="#myanchor">Anchor</a>
                             </li>
                         </ul>
                     </nav>
@@ -28,6 +29,9 @@
             <div class="content pure-u-1 pure-u-md-3-4">
                 {% block content %}
                 {% endblock %}
+            </div>
+            <div id="myanchor">
+                Testing
             </div>
         </div>
     </body>
