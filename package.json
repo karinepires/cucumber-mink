@@ -46,6 +46,7 @@
     "cucumber": "^0.5.2",
     "debug": "^2.2.0",
     "lodash": "^3.10.0",
+    "slugify": "^0.1.1",
     "webdriverio": "^3.1.0",
     "yargs": "^3.15.0"
   },
