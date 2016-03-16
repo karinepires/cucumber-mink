@@ -42,6 +42,12 @@
                     <input id="cb" name="cb" type="checkbox"> Accept ?
                 </label>
             </div>
+
+            <div class="pure-control-group">
+                <label for="file_field">File field</label>
+                <input id="file_field" name="file_field" type="file" placeholder="Select your file">
+            </div>
+
             <input type="submit" class="pure-button pure-button-primary" value="Input-Register" />
             <button type="submit" class="pure-button pure-button-primary">Button-Register</button>
             <button type="submit" class="pure-button pure-button-primary">Weird button '-' <span>text</span></button>
