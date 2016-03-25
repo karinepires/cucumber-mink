@@ -21,6 +21,7 @@
                                 <a class="pure-button" href="/form">Forms</a>
                                 <a href="/form">Follow me to form !</a>
                                 <a class="btanchor" href="#myanchor">Anchor</a>
+                                <a class="btwait" href="/wait">Wait</a>
                             </li>
                         </ul>
                     </nav>

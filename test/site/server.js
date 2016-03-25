@@ -22,6 +22,7 @@ server.route({ method: 'GET',  path: '/form',               handler: Routes.form
 server.route({ method: 'POST', path: '/result',             handler: Routes.result    });
 server.route({ method: 'GET',  path: '/post/{id}',          handler: Routes.post      });
 server.route({ method: 'GET',  path: '/generate/{number}',  handler: Routes.generate  });
+server.route({ method: 'GET',  path: '/wait',               handler: Routes.wait      });
 
 server.start(function () {
   console.log('Server running at:', server.info.uri);
