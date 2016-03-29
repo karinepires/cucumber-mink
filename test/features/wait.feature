@@ -3,6 +3,11 @@ Feature: Wait for things to happen
   Scenario: Wait for element contain any text
     Given I am on "/wait"
     Then I press ".fillWaitContent"
+    Then I wait 6 second for ".waitContent" to have content
+
+  Scenario: Wait for element contain any text
+    Given I am on "/wait"
+    Then I press ".fillWaitContent"
     Then I wait for ".waitContent" to have content
 
   Scenario: Wait for element not contain any text

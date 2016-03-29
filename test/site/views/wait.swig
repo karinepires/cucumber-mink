@@ -4,22 +4,25 @@
 
 {% block content %}
   <script>
+
+    var timeout = 3000;
+
     function fillWaitContent() {
       setTimeout(function() {
         document.querySelector('.waitContent').innerHTML = 'test';
-      }, 3000);
+      }, timeout);
     }
 
     function cleanWaitContent() {
       setTimeout(function() {
         document.querySelector('.waitContent').innerHTML = '';
-      }, 3000);
+      }, timeout);
     }
 
     function selectCountry() {
       setTimeout(function() {
         document.querySelector('#country').value = '0';
-      }, 3000);
+      }, timeout);
     }
 
     function createAnElement() {
@@ -28,70 +31,78 @@
         div.innerHTML = 'created element';
         div.id = 'createdElement';
         document.body.appendChild(div);
-      }, 3000);
+      }, timeout);
     }
 
     function deleteAnElement() {
       setTimeout(function() {
         var div = document.querySelector('#createdElement');
         document.body.removeChild(div);
-      }, 3000);
+      }, timeout);
     }
 
     function disableElement() {
       setTimeout(function() {
         var el = document.querySelector('.disabledElement');
         el.disabled = 'disabled';
-      }, 3000);
+      }, timeout);
     }
 
     function enableElement() {
       setTimeout(function() {
         var el = document.querySelector('.disabledElement');
         el.removeAttribute('disabled');
-      }, 3000);
+      }, timeout);
     }
 
     function putValueElement() {
       setTimeout(function() {
         var el = document.querySelector('.disabledElement');
         el.value = 'I have a value';
-      }, 3000);
+      }, timeout);
     }
 
     function removeValueElement() {
       setTimeout(function() {
         var el = document.querySelector('.disabledElement');
         el.value = '';
-      }, 3000);
+      }, timeout);
     }
 
     function hideElement() {
       setTimeout(function() {
         var el = document.querySelector('.disabledElement');
         el.setAttribute('style', 'display:none;visibility:hidden;');
-      }, 3000);
+      }, timeout);
     }
 
     function showElement() {
       setTimeout(function() {
         var el = document.querySelector('.disabledElement');
         el.setAttribute('style', 'display:inline;visibility:visible;');
-      }, 3000);
+      }, timeout);
     }
 
     function checkElement() {
       setTimeout(function() {
         var el = document.querySelector('.checkboxElement');
         el.checked = true;
-      }, 3000);
+      }, timeout);
     }
 
     function uncheckElement() {
       setTimeout(function() {
         var el = document.querySelector('.checkboxElement');
         el.checked = false;
-      }, 3000);
+      }, timeout);
+    }
+
+    function longerTimeout() {
+      timeout = 6000;
+    }
+
+    function shorterTimeout() {
+      timeout = 3000;
     }
 
   </script>
@@ -113,6 +124,9 @@
     <button class="showElement" onClick="showElement()">show element</button>
     <button class="checkElement" onClick="checkElement()">check element</button>
     <button class="uncheckElement" onClick="uncheckElement()">uncheck element</button>
+
+    <button class="longerTimeout" onClick="longerTimeout()">longer timeout (6s)</button>
+    <button class="shorterTimeout" onClick="shorterTimeout()">shorter timeout (3s)</button>
 
     <h2>Contents</h2>
     <div class="waitContent"></div>
