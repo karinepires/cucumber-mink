@@ -105,6 +105,25 @@
       timeout = 3000;
     }
 
+    function changePage() {
+      setTimeout(function() {
+        location = '/form';
+        // history.pushState({}, 'Forms', '/form');
+      }, timeout);
+    }
+
+    function changeHash() {
+      setTimeout(function() {
+        document.querySelector('.btanchor').click();
+      }, timeout);
+    }
+
+    function changeParameter() {
+      setTimeout(function() {
+        location = '/wait?var=1';
+      }, timeout);
+    }
+
   </script>
   <div>
     <h1>Wait Page</h1>
@@ -124,12 +143,16 @@
     <button class="showElement" onClick="showElement()">show element</button>
     <button class="checkElement" onClick="checkElement()">check element</button>
     <button class="uncheckElement" onClick="uncheckElement()">uncheck element</button>
+    <button class="changePage" onClick="changePage()">change URL page</button>
+    <button class="changeHash" onClick="changeHash()">change URL hash</button>
+    <button class="changeParameter" onClick="changeParameter()">change URL parameter</button>
 
     <button class="longerTimeout" onClick="longerTimeout()">longer timeout (6s)</button>
     <button class="shorterTimeout" onClick="shorterTimeout()">shorter timeout (3s)</button>
 
     <h2>Contents</h2>
     <div class="waitContent"></div>
+    <div class="waitContent">2222</div>
 
     <label for="country">Country</label>
     <select name="country" id="country">

@@ -1,12 +1,13 @@
 Feature: Wait for things to happen
 
-  Scenario: Wait for element contain any text
+  Scenario: Go to testing wait page
     Given I am on "/wait"
+
+  Scenario: Wait for element contain any text
     Then I press ".fillWaitContent"
     Then I wait 6 second for ".waitContent" to have content
 
   Scenario: Wait for element contain any text
-    Given I am on "/wait"
     Then I press ".fillWaitContent"
     Then I wait for ".waitContent" to have content
 
@@ -48,6 +49,10 @@ Feature: Wait for things to happen
   Scenario: Wait for element to not exist
     Then I press ".deleteAnElement"
     Then I wait for "#createdElement" to not exist
+
+  Scenario: Wait for element to exist and to contain informed text
+    Then I press ".createAnElement"
+    Then I wait for "#createdElement" to contain "created element"
 
   Scenario: Wait for element to be disabled
     Then I press ".disableElement"
@@ -94,3 +99,49 @@ Feature: Wait for things to happen
   Scenario: Wait for element to not match an informed value
     Then I press ".removeValueElement"
     Then I wait for ".disabledElement" to not match the value I [\w\s]+ value
+
+  # Steps with URL
+
+  Scenario: Wait for url to be the informed
+    Then I wait for the url to be "/wait"
+    Then I press ".changePage"
+    Then I wait for the url to be "/form"
+
+  Scenario: Wait for url to match the informed pattern
+    Given I am on "/wait"
+    Then I press ".changePage"
+    Then I wait for the url to match \/fo.*
+
+  Scenario: Wait for url parameter to be the informed
+    Given I am on "/wait"
+    Then I press ".changeParameter"
+    Then I wait for the url parameter to match var=\d
+
+  Scenario: Wait for url hash to be the informed
+    Given I am on "/wait"
+    Then I press ".changeHash"
+    Then I wait for the url hash to match ^\#myanchor
+
+  Scenario: Wait for url to be the informed
+    Then I wait for the url to be "/wait"
+    Then I press ".longerTimeout"
+    Then I press ".changePage"
+    Then I wait 10 second for the url to be "/form"
+
+  Scenario: Wait for url to match the informed pattern
+    Given I am on "/wait"
+    Then I press ".longerTimeout"
+    Then I press ".changePage"
+    Then I wait 10 second for the url to match \/fo.*
+
+  Scenario: Wait for url parameter to be the informed
+    Given I am on "/wait"
+    Then I press ".longerTimeout"
+    Then I press ".changeParameter"
+    Then I wait 10 second for the url parameter to match var=\d
+
+  Scenario: Wait for url hash to be the informed
+    Given I am on "/wait"
+    Then I press ".longerTimeout"
+    Then I press ".changeHash"
+    Then I wait 10 second for the url hash to match ^\#myanchor
